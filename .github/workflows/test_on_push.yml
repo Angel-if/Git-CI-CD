@@ -11,6 +11,10 @@ jobs:
   run_tests:
     runs-on: [ubuntu-latest]
     steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
       # Чекаутим код
       - uses: actions/checkout@master
       # Устанавливаем python нужной версии
