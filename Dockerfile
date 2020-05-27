@@ -12,4 +12,5 @@ RUN apt install -y nginx php-fpm supervisor && \
 # Expose Port for the Application 
 EXPOSE 80
 
+#enabled nginx 
 CMD ["nginx", "-g", "daemon off;"]
