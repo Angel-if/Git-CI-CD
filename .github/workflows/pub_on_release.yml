@@ -1,9 +1,14 @@
 name: Publish on Docker Hub and Deploy
-
 on:
-  release:
-    types: [published]
-  # Запуск только при публиковании нового релиза
+  push:
+    tags:
+      - '!refs/tags/*'
+    branches:
+      - '*'
+# on:
+#   release:
+#     types: [published]
+#   # Запуск только при публиковании нового релиза
 
 jobs:
   run_tests:
