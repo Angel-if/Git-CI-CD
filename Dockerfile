@@ -1,5 +1,5 @@
 # Download base image ubuntu 18.04
-FROM ubuntu:alphine
+FROM ubuntu:16.04
 
 # Update Ubuntu Software repository
 RUN apt update
@@ -10,6 +10,6 @@ RUN apt install -y nginx php-fpm supervisor && \
     apt clean
 
 # Expose Port for the Application 
-EXPOSE 80 443
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
